@@ -1,0 +1,468 @@
+@import './framework';
+@import './mixins';
+@import './variables';
+
+/* BASIC RESET */
+
+* {
+  font-family: Arial, Helvetica, sans-serif;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  text-decoration: none;
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+ul {
+list-style-type: none;
+}
+
+/* NAV */
+nav {
+
+  div {
+
+    img {
+      &:hover {
+        cursor: pointer;
+      }
+    }
+  }
+
+  padding: 0 20px;
+
+  @media only screen and (min-width: 1024px) {
+    padding: 0 168px;
+  }
+
+  div {
+    height: 50px;
+  }
+
+  #navRight {
+
+    #linkList {
+      position: relative;
+      top: 10px;
+      ul {
+        width: 100%;
+        height: 100%;
+        justify-content: space-around;
+      
+        li {
+
+          &:hover {
+            cursor: pointer;
+            color: black;
+          }
+
+          font-weight: bold;
+          color: $light-grey;
+          font-size: 1.1em;
+
+          &:nth-child(4)::after {
+            content: '';
+            display: inline-block;
+            border: 1px solid $light-grey;
+            height: 15px;
+            position: relative;
+            top: 3px;
+            margin-left: 15px;
+          }
+
+          &:nth-child(4), &:nth-child(5), &:nth-child(6) {
+            min-width: 70px;
+          }
+        }
+      }
+      @media only screen and (max-width: 720px) {
+        @include hide;
+      }
+    }
+
+    #burgerIcon {
+      position: relative;
+      top: 10px;
+      justify-content: flex-end;
+
+      @media only screen and (min-width: 720px) {
+        @include hide;
+      }
+    }
+  }
+}
+
+/* MAIN */
+
+main {
+  div {
+    #insideTopInfo {
+      @include whiteGradient;
+      padding: 0 20px;
+      margin-top: 80px;
+      margin-bottom: 80px;
+
+      h1 {
+        color: $orange;
+        font-weight: lighter;
+        font-size: 2.5em;
+        margin-bottom: 30px;
+      }
+
+      p {
+        @include paragraph;
+        margin-bottom: 60px;
+      }
+
+      button {
+        background-color: $light-blue;
+        @include button;
+        @include blueButtonHover;
+      }
+
+    }
+  }
+
+  #hero {
+    margin: 0;
+    width: 100%;
+
+    div {
+      padding: 0;
+    }
+  }
+
+  #howWorks {
+    margin-top: 100px;
+    margin-bottom: 80px;
+    flex-direction: column;
+
+    h2 {
+      color: $dark-grey;
+    }
+
+    p {
+      margin-top: 50px;
+      max-width: 720px;
+      width: 540px;
+      @include paragraph;
+    }
+  }
+
+  #howItWorksImages {
+    background-color: #ffffff;
+    div {
+      max-width: 1024px;
+      justify-content: space-around;
+      margin: 0;
+
+      @media only screen and (max-width: 720px) {
+        flex-direction: column;
+      }
+
+      .howItWorksImages {
+        flex-direction: column;
+        height: 345px;
+        justify-content: flex-start;
+
+        img {
+          height: 120px;
+          @media only screen and (min-width: 720px) {
+            height: 156px;
+          }
+        }
+
+        h4 {
+          margin-top: 50px;
+          color: $dark-grey;
+          font-size: 1.2em;
+        }
+
+        p {
+          @include paragraph;
+          margin-top: 30px;
+          max-width: 439px;
+        }
+
+        &:nth-child(2) {
+          @media only screen and (max-width: 720px) {
+            margin-top: 30px;
+            margin-bottom: 50px;
+          }
+        }
+
+        @media only screen and (min-width: 720px) {
+          height: 458px;
+        }
+      }
+    }
+  }
+
+  #everythingUN2K {
+    background-color: #f3f3f3;
+    div {
+
+      h2 {
+        margin-top: 80px;
+        margin-bottom: 30px;
+        color: $dark-grey;
+      }
+
+      button {
+        @include button;
+        padding-left: 40px;
+        padding-right: 40px;
+        background-color: $orange;
+
+        &:hover {
+          background-color: #dab782;
+        }
+      }
+
+      div {
+        justify-content: space-around;
+        height: 1653px;
+
+        @include innerMaxWidth;  
+
+        @media only screen and (min-width:720px) {
+          justify-content: space-around;
+        }
+
+        @media only screen and (min-width: 590px) {
+          height: 1277px;
+        }
+
+        @media only screen and (min-width: 810px) {
+          height: 1000px;
+        }
+
+        .classImgs {
+          flex-direction: column;
+          width: 270px;
+          height: 150px;
+          margin: auto;
+          background-color: white;
+          padding: 15px 0;
+
+          @media only screen and (min-width:720px) {
+            width: 254px;
+            margin: 0;
+          }
+
+          @media only screen and (min-width: 590px) {
+            height: 255px;
+            width: 255px;
+          }
+
+          h4 {
+            color: $dark-grey;
+          }
+
+          img {
+            height: 80px;
+            width: 80px;
+
+            @media only screen and (min-width: 590px) {
+              height: 160px;
+              width: 160px;
+            }
+          }
+
+        }
+      }
+    }
+  }
+
+  #succesStories {
+    @include whiteGradient;
+
+    h2 {
+      color: $dark-grey;
+      margin: 70px auto;
+    }
+
+    .insideSuccess {
+      @include innerMaxWidth;
+
+      .successContainer {
+          max-width: 600px;
+          margin-bottom: 30px;
+
+        &:nth-child(1) {
+
+          .successImg {
+            background-image: url("../images/robPando.jpg");
+            background-position: center left;
+            background-size: contain;
+          }
+        }
+
+        &:nth-child(2) {
+          
+          .successImg {
+            background-image: url("../images/olivia.png");
+            background-position: center left;
+            background-size: contain;
+          }
+        }
+
+        &:nth-child(3) {
+          
+          .successImg {
+            background-image: url("../images/codyLloyd.jpg");
+            background-position: center left;
+            background-size: contain;
+          }
+        }
+
+        &:nth-child(4) {
+
+          margin-bottom: 80px;
+          
+          .successImg {
+            background-image: url("../images/williamKennedy.jpg");
+            background-position: center left;
+            background-size: contain;
+          }
+        }
+
+        .successImg {
+          height: 50px;
+          min-width: 50px;
+          border-radius: 100px;
+          overflow: hidden;
+          margin-right: 15px;
+          align-self: flex-start;
+        }
+
+        .innerSuccess {
+          flex-direction: column;
+          align-items: flex-start;
+
+          p {
+            @include paragraph;
+          }
+        }
+
+        a {
+          font-size: 1.1em;
+          margin-bottom: 15px;
+          color: $orange;
+
+          &:hover {
+            color: black;
+          }
+        }
+      }
+    }
+
+  }
+
+#startLearning {
+  background-color: #f1f1f1;
+
+  div {
+    flex-direction: column;
+
+    .blueButton {
+      background-color: $light-blue;
+      @include button;
+      @include blueButtonHover;
+    }
+
+    p {
+      margin: 80px auto 50px auto;
+      color: $light-grey;
+      font-size: 2.2em;
+    }
+  }
+}
+
+  #successLink {
+    color: $light-grey;
+    text-decoration: underline;
+
+    &:hover {
+      color: black;
+    }
+  }
+}
+
+/* FOOTER */
+
+footer {
+  height: 70px;
+  
+  @media only screen and (min-width: 720px) {
+    height: 130px;
+  }
+
+  @media only screen and (min-width: 1024px) {
+    height: 277px;
+  }
+
+  .row {
+    height: 100%;
+    
+    #icons {
+      justify-content: space-around;
+
+      @media only screen and (max-width: 720px) {
+        position: relative;
+        top: 20px;
+      }
+
+      span {
+        color: #ce973e;
+        height: 24px;
+        width: 24px;
+      }
+    }
+
+    #footerLinks {
+
+      div {
+        width: 50%;
+        height: 100%;
+        justify-content: space-around;
+        flex-direction: column;
+        padding: 20px 0;
+
+        a {
+          font-weight: bold;
+          color: $light-grey;
+
+          &:hover {
+            color: black;
+          }
+        }
+
+        & a:nth-child(3) {
+          height: 10px;
+        }
+
+        @media only screen and (max-width: 720px) {
+          position: absolute;
+          visibility: hidden;
+        }
+
+        @media only screen and (min-width: 1024px) {
+          padding: 75px 0;
+        }
+      }
+    }
+  }
+}

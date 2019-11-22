@@ -1,2 +1,1 @@
-# grid-based-frameworkAraGwen
-This is a grid based framework.
+# Grid-Based-Framework

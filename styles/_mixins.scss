@@ -1,0 +1,109 @@
+@mixin flex {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+@mixin width1 {
+  width: 8.33%;
+}
+
+@mixin width2 {
+  width: 16.66%;
+}
+
+@mixin width3 {
+  width: 24.99%;
+}
+
+@mixin width4 {
+  width: 33.32%;
+}
+
+@mixin width5 {
+  width: 41.65%;
+}
+
+@mixin width6 {
+  width: 49.98%;
+}
+
+@mixin width7 {
+  width: 58.31%;
+}
+
+@mixin width8 {
+  width: 66.64%;
+}
+
+@mixin width9 {
+  width: 74.97%;
+}
+
+@mixin width10 {
+  width: 83.3%;
+}
+
+@mixin width11 {
+  width: 91.63%;
+}
+
+@mixin width12 {
+  width: 99.96%;
+}
+
+@mixin col-sm-pad {
+  padding: 0 5px;
+}
+
+@mixin col-md-pad {
+  padding: 0 10px;
+}
+
+@mixin col-lg-pad {
+  padding: 0 15px;
+}
+
+@mixin innerMaxWidth {
+  max-width: 950px;
+  width: 100%;
+  flex-wrap: wrap;
+  margin: auto;
+}
+
+@mixin hide {
+  position: absolute;
+  visibility: hidden;
+}
+
+@mixin show {
+  position: static;
+  visibility: visible;
+}
+
+@mixin button {
+  padding: 16px 56px;
+  border: none;
+  border-radius: 5px;
+  color: white;
+  font-weight: bold;
+  font-size: 1.15em;
+  box-shadow: rgb(167, 167, 167) 2px 2px 3px;
+  margin-bottom: 80px;
+}
+
+@mixin blueButtonHover {
+  &:hover {
+    background-color: #85c9cc;
+  }
+}
+
+@mixin paragraph {
+  line-height: 35px;
+  font-size: 1.1em;
+  color: $light-grey;
+}
+
+@mixin whiteGradient {
+  background-image: linear-gradient(white, #f1f1f1);
+}
