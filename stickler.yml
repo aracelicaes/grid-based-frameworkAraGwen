@@ -1,0 +1,16 @@
+linters:
+  stylelint:
+    config: 'stylelint.config.js'
+    fixer: true
+files:
+  ignore:
+    - 'normalize.css'
+    - 'reboot.css'
+    - 'reset.css'
+    - '_mixins.scss'
+    - '_variables.scss'
+    - 'style.scss'
+    - 'style.css.map'
+
+fixers:
+  enable: true
